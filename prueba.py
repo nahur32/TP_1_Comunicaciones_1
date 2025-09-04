@@ -15,3 +15,7 @@ ax.legend()
 plt.title('Diagrama Fasorial')
 plt.grid()
 plt.show()
+
+
+
+print('hola')
