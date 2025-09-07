@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2024.11.17)  7 SEP 2025 16:18
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2024.11.17)  7 SEP 2025 16:26
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1091,11 +1091,42 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             See the microtype manual for details.
  [1
 
-{C:/Users/nahur/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}{C:/Users/nahur/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/base/8r.enc} <./logo-unsl.jpg>] (Parte_teorica/actividad_1.tex)
+{C:/Users/nahur/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}{C:/Users/nahur/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/base/8r.enc} <./logo-unsl.jpg>] (Parte_teorica/actividad_1.tex) (Parte_teorica/actividad_2.tex
+LaTeX Font Info:    Trying to load font information for FML+futmi on input line 3.
+ (C:\Users\nahur\AppData\Local\Programs\MiKTeX\tex/latex/fourier\fmlfutmi.fd
+File: fmlfutmi.fd 2004/10/30 Fontinst v1.926 font definitions for FML/futmi.
+)
+LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
+(Font)              scaled to size 9.19998pt on input line 3.
+LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
+(Font)              scaled to size 6.99199pt on input line 3.
+LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
+(Font)              scaled to size 5.51999pt on input line 3.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 3.
+ (C:\Users\nahur\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+) (C:\Users\nahur\AppData\Local\Programs\MiKTeX\tex/latex/microtype\mt-msa.cfg
+File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
+)
+LaTeX Font Info:    Trying to load font information for U+msb on input line 3.
+ (C:\Users\nahur\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+) (C:\Users\nahur\AppData\Local\Programs\MiKTeX\tex/latex/microtype\mt-msb.cfg
+File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
+) (C:\Users\nahur\AppData\Local\Programs\MiKTeX\tex/latex/microtype\mt-eur.cfg
+File: mt-eur.cfg 2006/07/31 v1.1 microtype config. file: AMS Euler Roman (RS)
+)
+LaTeX Font Info:    Font shape `U/futm/m/n' will be
+(Font)              scaled to size 9.19998pt on input line 3.
+LaTeX Font Info:    Font shape `U/futm/m/n' will be
+(Font)              scaled to size 6.99199pt on input line 3.
+LaTeX Font Info:    Font shape `U/futm/m/n' will be
+(Font)              scaled to size 5.51999pt on input line 3.
+)
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.138 \end{document}
+l.140 \end{document}
                      [1] (informe.aux
 LaTeX Info: Redefining \sptext on input line 12.
 LaTeX Info: Redefining \. on input line 12.
@@ -1112,17 +1143,17 @@ Package logreq Info: Writing requests to 'informe.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 28333 strings out of 474485
- 543729 string characters out of 5743733
+ 28490 strings out of 474485
+ 546957 string characters out of 5743733
  1931542 words of memory out of 5000000
- 50133 multiletter control sequences out of 15000+600000
- 616222 words of font info for 143 fonts, out of 8000000 for 9000
+ 50241 multiletter control sequences out of 15000+600000
+ 637739 words of font info for 178 fonts, out of 8000000 for 9000
  1143 hyphenation exceptions out of 8191
  75i,6n,81p,1078b,1837s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<C:/Users/nahur/AppData/Local/Programs/MiKTeX/fonts/type1/adobe/utopia/putb8a.pfb><C:/Users/nahur/AppData/Local/Programs/MiKTeX/fonts/type1/adobe/utopia/putr8a.pfb>
-Output written on informe.pdf (2 pages, 182674 bytes).
+<C:/Users/nahur/AppData/Local/Programs/MiKTeX/fonts/type1/public/fourier/fourier-mlit.pfb><C:/Users/nahur/AppData/Local/Programs/MiKTeX/fonts/type1/public/fourier/fourier-ms.pfb><C:/Users/nahur/AppData/Local/Programs/MiKTeX/fonts/type1/adobe/utopia/putb8a.pfb><C:/Users/nahur/AppData/Local/Programs/MiKTeX/fonts/type1/adobe/utopia/putr8a.pfb><C:/Users/nahur/AppData/Local/Programs/MiKTeX/fonts/type1/adobe/utopia/putri8a.pfb>
+Output written on informe.pdf (2 pages, 197465 bytes).
 PDF statistics:
- 29 PDF objects out of 1000 (max. 8388607)
- 5 named destinations out of 1000 (max. 500000)
- 65542 words of extra memory for PDF output out of 74296 (max. 10000000)
+ 50 PDF objects out of 1000 (max. 8388607)
+ 9 named destinations out of 1000 (max. 500000)
+ 69638 words of extra memory for PDF output out of 74296 (max. 10000000)
 
