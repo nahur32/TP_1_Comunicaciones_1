@@ -1,11 +1,125 @@
-\documentclass{article}
-\begin{document}
-\section*{Introducción}
-Este es un texto básico en LaTeX. Podemos escribir en \textbf{negrita}, 
-\textit{cursiva} y 
-\underline{subrayado}. Por ejemplo, \emph{esta frase está enfatizada}.
-Los párrafos se crean dejando una línea en blanco.
 
-LaTeX es muy útil para la producción de documentos y 
-trabajos de investigación, ya que permite un control preciso sobre el formato.
+\documentclass{article}
+% Codificación y idioma
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[spanish,es-tabla]{babel}
+
+% Márgenes y geometría
+\usepackage[a4paper,top=2cm,bottom=2cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry}
+
+% Paquetes matemáticos y gráficos
+\usepackage{amsmath, amsfonts, amssymb}
+\usepackage{graphicx}
+\usepackage{float}
+
+% Tablas y colores
+\usepackage{array, tabularx, multirow, colortbl, xcolor}
+
+% Otros paquetes útiles
+\usepackage{hyperref}
+\usepackage{caption}
+\usepackage{enumerate}
+\usepackage{siunitx}
+\usepackage{listings}
+
+% Configuración para listings (código C)
+\lstset{
+  language=C,
+  basicstyle=\ttfamily,
+  keywordstyle=\color{blue},
+  stringstyle=\color{orange},
+  commentstyle=\color{green},
+  numbers=left,
+  numberstyle=\tiny\color{gray},
+  stepnumber=1,
+  frame=single,
+  breaklines=true,
+  tabsize=2
+}
+
+
+
+
+
+
+
+
+\begin{document}
+
+% --- Carátula ---
+\begin{titlepage}	  
+\centering
+
+% --- Logo UNSL ---		
+\begin{figure}
+\centering
+\includegraphics[width=0.15\linewidth]{logo-unsl.jpg}
+\end{figure}     
+
+% --- Datos de la asignatura ---
+{\scshape\LARGE Universidad Nacional de San Luis\par}
+{\scshape Facultad de Ciencias Físico Matemáticas y Naturales\par}
+{\scshape Ingeniería Electrónica con O.S.D.\par}
+\bigskip 
+\bigskip 
+\bigskip 
+
+\Large \textbf {Asignatura:\\} 
+\LARGE Tecnologías de computadoras
+\bigskip 
+\bigskip 
+\bigskip
+\bigskip
+
+% --- Datos del informe / TP ---
+\LARGE \textbf {Informe de laboratorio\\}
+\bigskip
+\LARGE \textbf {Configuración de red usando software de
+simulación}
+ 
+\bigskip
+\bigskip
+\bigskip
+
+% --- Datos del alumno ---  
+\LARGE \textbf {Estudiantes:\\} 
+	\LARGE Nahuel Ramires\\ Marcos Lucero Quiroga
+
+\bigskip
+
+
+\bigskip
+\bigskip
+\bigskip
+\bigskip
+\bigskip
+\bigskip
+
+% --- Datos de los profesores ---  
+\Large \textbf {Profesores responsables:\\} 
+\Large  Ing. Dario Maximiliano Orozco \\ Ing. Martín Miguel Guevara Lucero 
+\bigskip
+\bigskip
+\bigskip
+\bigskip
+\bigskip
+\bigskip
+\bigskip
+\bigskip
+\bigskip
+
+% --- Año ---  
+\Large \textbf {Año:\\} 
+\Large 2024	
+\end{titlepage}
+\newpage
+
+% --- Fin de la carátula --- 
+
+
+
+
+
+
 \end{document}
