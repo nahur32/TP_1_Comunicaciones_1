@@ -1,140 +1,81 @@
-\documentclass{article}
-
-% Configuración de la codificación de entrada
-\usepackage[utf8]{inputenc}
-
-% Configuración de la codificación de salida
-\usepackage[T1]{fontenc}
-
-% Paquete para el idioma y comillas
-\usepackage[spanish,es-tabla]{babel}
-\usepackage{csquotes}
-
-\usepackage{hyphenat}
-\usepackage{microtype}
-
-\hyphenation{ex-am-ple hy-phen-a-tion}
-\hyphenpenalty=500
-\tolerance=1000
-
-% Tamaño de la página (A4) y márgenes
-\usepackage[a4paper,top=2cm,bottom=2cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry}
-
-% Otros packages
-\usepackage{amsmath}
-\usepackage{graphicx}
-\usepackage[colorlinks=true, allcolors=blue]{hyperref}
-\usepackage[utf8]{inputenc}
-
-\usepackage{hyperref}
-\usepackage{amsmath}
-\usepackage[usenames]{color}
-\usepackage{amsfonts}
-\usepackage{amssymb}
-\usepackage{graphicx}
-\usepackage{caption}
-\usepackage{enumerate} 
-\usepackage{siunitx}
-\usepackage{upgreek}
-\usepackage{epsfig}
-\usepackage{multirow}
-\usepackage{colortbl}
-\usepackage{xspace}    
-
-% para las tablas
-\usepackage{multicol,multirow, array} 
-\usepackage[table,xcdraw]{xcolor}
-\usepackage[table]{xcolor}
-\captionsetup{justification=centerlast,labelfont=bf,font=sf}
-\usepackage{subfigure}
-\usepackage[T1]{fontenc}
-\usepackage{fourier}
-\usepackage{fancyhdr}
-\usepackage{float} 
-\usepackage{steinmetz}
-\setcounter{equation}{0}
-\usepackage{biblatex}
-
 % para agregar la carpeta de las imagenes
-\graphicspath{{./nombre de la carpeta/}}
+%\graphicspath{{./nombre de la carpeta/}}
+
+%el codigo principal solo contiene el tipo de documento, la caratula y la forma de llamar a los otros archivos, asi como imprimir bibilografia y el indice.
+
+\documentclass[11pt,a4paper]{article}
+\input{librerias} %llama al archivo donde estan todas las librerias include
+
+
+%%encabezado
+\rhead{\begin{picture}(0,0)	\put(-22,0) {\includegraphics[height=1cm]{caratula/logounsl.png}} \end{picture}}
+\lhead{\begin{picture}(0,0)	\put(0,0) {\includegraphics[height=1cm]{caratula/logo_depto.jpg}} \end{picture}}
+\chead{\vspace{-.05cm}\textcolor{gray}{Sistemas de Comunicaciones, teoría de la información y Análisis de Señales - TP N.$^o$1} \vspace{.25cm}}
+
+%%
+%pie de pagina
+\rfoot{\textcolor{gray}{Comunicaciones I - 2025}}
+\lfoot{\textcolor{gray}{Marcos Lucero - Nahuel Ramires - Agustín Cappiello}}
+\cfoot{\textcolor{gray}{\thepage}}  % Cambiar el número de página a gris
+
 
 \begin{document}
-	
-	% --- Carátula ---
-	\begin{titlepage}	  
-		\centering
-		
-		% --- Logo UNSL ---	
-		\begin{figure}
-			\centering
-			\includegraphics[width=0.15\linewidth]{logo-unsl.jpg}
-		\end{figure}    
-		
-		% --- Datos de la asignatura ---
-		{\scshape\LARGE Universidad Nacional de San Luis\par}
-		{\scshape Facultad de Ciencias Físico Matemáticas y Naturales\par}
-		{\scshape Ingeniería Electrónica con O.S.D.\par}
-		\bigskip 
-		\bigskip 
-		\bigskip 
-		
-		\Large \textbf {Asignatura:\\} 
-		\LARGE Diseño de Sistemas Digitales	
-		\bigskip 
-		\bigskip 
-		\bigskip
-		\bigskip
-		
-		% --- Datos del informe / TP ---
-		\LARGE \textbf {Informe de laboratorio\\}
-		\LARGE \textbf {TP N° 2: Diseño de lógica combinacional con VHDL}
-		
-		\bigskip
-		\bigskip
-		\bigskip
-		
-		% --- Datos del alumno ---  
-		\LARGE \textbf {Estudiante:\\} 
-		\LARGE Nombre y apellido del alumno\\
-		\bigskip
-		\Large \textbf {DNI N°:\\} 
-		\Large Número de DNI	
-		
-		\bigskip
-		\bigskip
-		\bigskip
-		\bigskip
-		\bigskip
-		\bigskip
-		
-		% --- Datos de los profesores ---  
-		\Large \textbf {Profesores responsables:\\} 
-		\Large Dr. Víctor Yelpo \\ Ing. Ivana Trento
-		
-		\bigskip
-		\bigskip
-		\bigskip
-		\bigskip
-		\bigskip
-		\bigskip
-		\bigskip
-		\bigskip
-		\bigskip
-		
-		% --- Año ---  
-		\Large \textbf {Año:\\} 
-		\Large 2024	
-	\end{titlepage}
-	\newpage
-	
-	% --- Fin de la carátula --- 
-	
-	
-	
-	% --- Comienzo del informe --- 
-	
-	\input{Parte_teorica/actividad_1.tex}
-	\input{Parte_teorica/actividad_2.tex}
+    %caratula
+    \begin{titlepage}	  
+    		\centering
+    		
+    		% --- Logo UNSL ---		
+    		\begin{figure}
+    			\centering
+    			\includegraphics[width=0.15\linewidth]{caratula/logo-unsl.jpg}
+    		\end{figure}     
+    		
+    		% --- Datos de la asignatura ---
+    		{\scshape\LARGE Universidad Nacional de San Luis\\}
+    		{\scshape Facultad de Ciencias Físico Matemáticas y Naturales\par}
+    		{\scshape Ingeniería Electrónica con O.S.D.\par}
+    		\vspace{2cm} 
+    		
+    		\Large \textbf {Asignatura:\\} 
+    		\bigskip
+    		\LARGE {\Huge Comunicaciones I}
+    		\vspace{0.3cm}
+    		
+    		% --- Datos del informe / TP ---
+    		\LARGE \textbf {Trabajo Practico N° 1\\} 
+    		\vspace{0.7cm}
+    		\LARGE \textbf {Sistemas de comunicaciones, teoría de la información y análisis de señales}
 
-	
+    		\vspace{2cm}
+    		% --- Datos del alumno ---  
+    		\LARGE \textbf {Estudiantes:\\} 
+    		\LARGE Marcos Lucero \\ Nahuel Ramires\\ Agustín Cappiello\\
+    		\bigskip
+    		
+    		
+    		\vspace{1cm}
+    		
+    		% --- Datos de los profesores ---  
+    		\Large \textbf {Profesores Responsables:\\} 
+    		\bigskip
+    		\Large Alejandro Marwan Geraiges Magrini. \\ Roberto Kiessling.
+    		
+    		
+    		\vspace{3cm}
+    		
+    		% --- Año ---  
+    		\Large \textbf {Año:\\} 
+    		\Large 2025	
+    	\end{titlepage}
+    %fin caratula	
+    
+%   \tableofcontents %Para el indice
+    \include{Parte_teorica/actividad_1.tex} %llama los otros archivos .tex
+    \include{Parte_teorica/actividad_2.tex}
+ %   \include{actividad3}
+ %   \include{conclusion}
+    
+
+%\printbibliography[heading=bibintoc] % Agrega el título "Referencias" al índice automáticamente
+    
 \end{document}
