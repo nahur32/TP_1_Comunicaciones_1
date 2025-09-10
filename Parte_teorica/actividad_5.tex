@@ -1,12 +1,115 @@
 \subsection*{5. Representación de Señales Pasabanda}
 
-\textbf{5.1)} Explique la diferencia entre señales de banda base y señales pasabanda.
+\noindent \textbf{5.1)} Explique la diferencia entre señales de banda base y señales pasabanda. \par
+\bigskip
 
-\textbf{5.2)} Describa la representación de envolvente compleja de una señal pasabanda. ¿Por qué es útil esta representación?
+    \noindent Una forma de onda de banda base tiene una magnitud espectral diferente de
+    cero para las frecuencias alrededor del origen (es decir, f = 0) y es despreciable en cualquier
+    otro caso portadora.\par
+    \bigskip
+    \noindent Una forma de onda pasabanda tiene una magnitud espectral diferente de cero
+    para las frecuencias en cierta banda concentrada alrededor de una frecuencia f =+-fc, donde
+    fc  0. La magnitud espectral es despreciable en cualquier otro caso. A la frecuencia fc se le
+    llama frecuencia portadora.
 
-\textbf{5.3)} Para una señal modulada \(s(t) = A(t)\cos[\omega_c t + \phi(t)]\), identifique:
-\begin{enumerate}[label=\alph*)]
-    \item La componente en fase
-    \item La componente en cuadratura
-    \item La envolvente compleja
-\end{enumerate}
+
+%---------------------------------------------------------------------------------
+\bigskip
+
+\noindent \textbf{5.2)} Describa la representación de envolvente compleja de una señal pasabanda. ¿Por qué es útil esta representación? \par
+\bigskip
+
+\noindent Una señal pasabanda real \( s(t) \) con frecuencia portadora \( f_c \) puede expresarse en términos de su envolvente compleja \( \tilde{s}(t) \) de la siguiente manera:\par
+
+\noindent \textbf{Forma general:}
+\[
+s(t) = \text{Re} \left\{ \tilde{s}(t) \, e^{j 2\pi f_c t} \right\}
+\]
+
+\noindent \textbf{Descomposición en componentes:}\par
+\noindent La envolvente compleja \( \tilde{s}(t) \) es una señal compleja de banda base que se escribe como:
+\[
+\tilde{s}(t) = s_I(t) + j s_Q(t)
+\]
+donde:
+\begin{itemize}
+    \item \( s_I(t) \): \textbf{Componente en fase} (parte real),
+    \item \( s_Q(t) \): \textbf{Componente en cuadratura} (parte imaginaria).
+\end{itemize}
+
+\noindent \textbf{Expresión alternativa de \( s(t) \):}\par
+\noindent Sustituyendo \( \tilde{s}(t) \) en la forma general:
+\[
+s(t) = s_I(t) \cos(2\pi f_c t) - s_Q(t) \sin(2\pi f_c t)
+\]
+
+\noindent \textbf{Forma polar de la envolvente compleja:}
+\[
+\tilde{s}(t) = a(t) \, e^{j \phi(t)}
+\]
+donde:
+\begin{itemize}
+    \item \( a(t) = \sqrt{s_I^2(t) + s_Q^2(t)} \): \textbf{Envolvente real} (amplitud instantánea),
+    \item \( \phi(t) = \tan^{-1} \left( \dfrac{s_Q(t)}{s_I(t)} \right) \): \textbf{Fase instantánea}.
+\end{itemize}
+\noindent Entonces, la señal pasabanda se expresa como:
+\[
+s(t) = a(t) \cos \left( 2\pi f_c t + \phi(t) \right)
+\]
+
+\noindent Esta representación es fundamental porque permite analizar y procesar señales pasabanda (de alta frecuencia) utilizando herramientas de banda base (baja frecuencia), lo que simplifica enormemente el estudio de su comportamiento espectral y temporal, reduce la complejidad computacional en simulaciones al requerir menores tasas de muestreo, y facilita la aplicación de operaciones como filtrado, convolución o transformaciones al trabajar con señales de variación lenta, manteniendo la generalidad para todo tipo de modulaciones.
+%---------------------------------------------------------------------------------
+\bigskip
+
+\noindent \textbf{5.3)} Para una señal modulada \(s(t) = A(t)\cos[\omega_c t + \phi(t)]\), identifique: \par
+
+\noindent a) La componente en fase.\par
+\bigskip
+
+\begin{align*}
+s(t) &= A(t) \cos[\omega_c t + \phi(t)] \\
+     &= A(t) \cos(\omega_c t) \cos \phi(t) - A(t) \sin(\omega_c t) \sin \phi(t)
+\end{align*}
+Comparando con la forma canónica:
+
+\[
+s(t) = s_I(t) \cos(\omega_c t) - s_Q(t) \sin(\omega_c t)
+\]
+
+Se identifica:
+
+\[
+s_I(t) = A(t) \cos \phi(t)
+\]
+\bigskip
+
+\noindent b) La componente en cuadratura. \par
+\bigskip
+De la misma expansión:
+
+\[
+s(t) = s_I(t) \cos(\omega_c t) - s_Q(t) \sin(\omega_c t)
+\]
+
+Se identifica:
+
+\[
+s_Q(t) = A(t) \sin \phi(t)
+\]
+\bigskip
+
+\noindent c)La envolvente compleja.\par
+\bigskip
+
+La envolvente compleja se define como:
+
+\[
+\tilde{s}(t) = s_I(t) + j s_Q(t)
+\]
+
+Sustituyendo los valores obtenidos:
+
+\[
+\tilde{s}(t) = A(t) \cos \phi(t) + j A(t) \sin \phi(t) = A(t) e^{j\phi(t)}
+\]
+

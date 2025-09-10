@@ -1,13 +1,83 @@
 \subsection*{4. Transformada de Hilbert y Señal Analítica}
 
-\textbf{4.1)} Defina la Transformada de Hilbert de una señal \(x(t)\). ¿Cuál es su interpretación física?
+\noindent \textbf{4.1)} Defina la Transformada de Hilbert de una señal \(x(t)\). ¿Cuál es su interpretación física?
+\bigskip
 
-\textbf{4.2)} Explique el concepto de señal analítica. ¿Cuáles son sus ventajas en el procesamiento de señales?
+La Transformada de Hilbert es una herramienta matemática utilizada para describir la envolvente compleja de una señal modulada con una portadora real. Se denota como \( \hat{x}(t) \) y se define mediante la integral:
 
-\textbf{4.3)} Si \(x(t) = \cos(\omega t)\), encuentre:
-\begin{enumerate}[label=\alph*)]
-    \item Su transformada de Hilbert
-    \item La señal analítica correspondiente
-    \item La envolvente compleja
-\end{enumerate}
+\[
+\hat{x}(t) = \mathcal{H}\{x(t)\} = \frac{1}{\pi} \int_{-\infty}^{\infty} \frac{x(\tau)}{t - \tau}  d\tau
+\]
 
+Equivalentemente, es la convolución de \( x(t) \) con la función \( \frac{1}{\pi t} \):
+
+\[
+\hat{x}(t) = x(t) * \frac{1}{\pi t}
+\]
+
+\noindent \textbf{Interpretación Física:} \par
+    \noindent La Transformada de Hilbert desplaza la fase de todas las componentes frecuenciales de la señal en \(-90^\circ\) (es decir, \( -\frac{\pi}{2} rad\)), no afecta la amplitud del espectro, solo modifica la fase. Puede verse como un filtro pasa-todo con respuesta en frecuencia:
+    \[
+    H(f) = -j \cdot \operatorname{sgn}(f) = 
+    \begin{cases}
+        -j & \text{para } f > 0 \\
+        j & \text{para } f < 0
+    \end{cases}
+    \]
+
+    \noindent Esto significa que para frecuencias positivas desplaza la fase \(-90^\circ\) y para frecuencias negativas desplaza la fase \(+90^\circ\).\par
+    \bigskip
+
+%--------------------------------------------------------------------------------
+
+\noindent \textbf{4.2)} Explique el concepto de señal analítica. ¿Cuáles son sus ventajas en el procesamiento de señales?\par
+\bigskip
+
+\noindent La señal analítica es una representación compleja de una señal real, obtenida mediante la supresión de las componentes frecuenciales negativas de la señal original. A partir de la señal analítica se deriva la señal banda base equivalente, representación también analítica conocida como envolvente compleja.Se define como:
+                        \[
+                        x_a(t) = x(t) + j\hat{x}(t)
+                        \]
+                        
+donde:
+\begin{itemize}
+    \item \( x(t) \) es la señal real original
+    \item \( \hat{x}(t) \) es su transformada de Hilbert
+\end{itemize}
+
+\noindent \textbf{Ventajas:}
+\begin{itemize}
+    \item Reducción del ancho de banda: al eliminar las frecuencias negativas, el ancho de banda efectivo se reduce a la mitad.
+    \item Facilita el análisis de envolventes y fases: la señal analítica permite definir fácilmente la envolvente compleja y la fase instantánea de una señal modulada.
+    \item Modulación de Banda Lateral Única (SSB).
+    \item Demodulación coherente.
+    \item Análisis de señales pasabanda.
+\end{itemize}
+%--------------------------------------------------------------------------------
+\bigskip 
+
+\noindent \textbf{4.3)} Si \(x(t) = \cos(\omega t)\), encuentre:\par
+\bigskip
+
+\noindent a) Su transformada de Hilbert.\par
+\[
+\hat{x}(t) = sin(\omega t)
+\]
+
+\noindent b) La señal analítica correspondiente. \par
+\[
+x_a(t) = x(t) + j \hat{x}(t) = \cos(\omega t) + j \sin(\omega t)
+\]
+Usando la identidad de Euler:
+\[
+e^{j\theta} = \cos\theta + j\sin\theta,
+\]
+con \(\theta = \omega t\), resulta:
+\[
+x_a(t) = e^{j\omega t}.
+\]
+
+
+\noindent c) La envolvente compleja.\par
+\[
+\tilde{x}(t) = x_a(t) \cdot e^{-j\omega t} = e^{j\omega t} \cdot e^{-j\omega t} = e^{0} = 1.
+\]

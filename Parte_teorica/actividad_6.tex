@@ -1,22 +1,94 @@
 \subsection*{6. Teoría de la Información y Capacidad de Canal}
 
-\textbf{6.1) Conceptos Fundamentales:}
-\begin{enumerate}[label=\alph*)]
-    \item Defina información e información propia (auto-información) de un evento
-    \item ¿Por qué se utiliza el logaritmo en la definición de información?
-    \item Explique el concepto de entropía de una fuente discreta
-\end{enumerate}
+\noindent \textbf{6.1) Conceptos Fundamentales:}\par
+\bigskip
 
-\textbf{6.2)} Para una fuente binaria con probabilidades \(P(0) = 0.3\) y \(P(1) = 0.7\):
-\begin{enumerate}[label=\alph*)]
-    \item Calcule la información propia de cada símbolo
-    \item Calcule la entropía de la fuente
-    \item Compare con la entropía máxima posible
-\end{enumerate}
+\noindent a) Defina información e información propia (auto-información) de un evento.\par
+\bigskip
 
-\textbf{6.3) Capacidad de Canal:}
-\begin{enumerate}[label=\alph*)]
-    \item Enuncie el Teorema de Shannon-Hartley
-    \item ¿Qué representa físicamente la capacidad de canal?
-    \item Para un canal AWGN con ancho de banda \(B = 4\) kHz y \(SNR = 15\) dB, calcule la capacidad del canal
-\end{enumerate}
+La información de un evento se define como la medida de la sorpresa o la reducción en la incertidumbre que proporciona la ocurrencia de dicho evento. Por otro lado, la auto-información de un evento, se refiere a la cantidad de información asociada con la realización de un evento específico.
+\bigskip
+
+\noindent b) ¿Por qué se utiliza el logaritmo en la definición de información?.\par
+\bigskip
+El logaritmo se utiliza en la definición de información porque permite una forma conveniente de cuantificar la información de manera proporcional al grado de inusualidad del evento. Utilizar el logaritmo garantiza que la información sea aditiva para eventos independientes, lo que es fundamental en la teoría de la información. La base del logaritmo determina las unidades utilizadas para la medida de información. Por lo
+tanto, se emplea el logaritmo de base 2 para unidades de “bits”.
+\bigskip
+
+\noindent c) Explique el concepto de entropía de una fuente discreta. \par
+\bigskip
+
+\noindent Entropía (\( H(X) \)): La \textit{entropía} de una fuente discreta \( X \) que emite símbolos \( \{x_1, x_2, \dots, x_M\} \) con probabilidades \( \{p(x_1), p(x_2), \dots, p(x_M)\} \) se define como el valor esperado de la auto-información:
+\[
+H(X) = E[I(x_k)] = \sum_{k=1}^{M} p(x_k) \cdot I(x_k) = -\sum_{k=1}^{M} p(x_k) \log_2 p(x_k)
+\]
+\textit{Unidades:} bits/símbolo.   \par 
+\noindent Interpretación:
+\begin{itemize}
+    \item \( H(X) \) mide la \textit{incertidumbre promedio} por símbolo de la fuente.
+    \item También representa la \textit{cantidad promedio de información} por símbolo.
+    \item \textit{Máxima entropía:} Ocurre cuando todos los símbolos son equiprobables:
+        \[
+        H_{\text{máx}} = \log_2 M
+        \]
+    \item \textit{Entropía mínima:} \( H_{\text{min}} = 0 \), cuando un símbolo tiene probabilidad 1 y los demás 0.
+\end{itemize}
+%---------------------------------------------------------------------------------
+\bigskip
+
+\noindent \textbf{6.2)} Para una fuente binaria con probabilidades \(P(0) = 0.3\) y \(P(1) = 0.7\):\par
+\bigskip
+
+\noindent a) Calcule la información propia de cada símbolo.\par
+\begin{align*}
+I(0) &= \log_2 \left( \frac{1}{0.3} \right) \approx 1.737 \text{ bits} \\
+I(1) &= \log_2 \left( \frac{1}{0.7} \right) \approx 0.515 \text{ bits}
+\end{align*}
+\bigskip
+
+\noindent b) Calcule la entropía de la fuente.\par
+\begin{align*}
+H(X) &= 0.3 \cdot \log_2 \left( \frac{1}{0.3} \right) + 0.7 \cdot \log_2 \left( \frac{1}{0.7} \right) \\
+     &\approx 0.3 \cdot 1.737 + 0.7 \cdot 0.515 \approx 0.881 \text{ bits/símbolo}
+\end{align*}
+\noindent c) Compare con la entropía máxima posible. \par
+
+\begin{align*}
+H_{\text{máx}} &= \log_2(2) = 1 \text{ bit/símbolo}
+\end{align*}
+La entropía calculada (0.881 bits/símbolo) es menor porque la fuente no es equiprobable.
+
+
+%---------------------------------------------------------------------------------
+\bigskip
+
+\noindent \textbf{6.3) Capacidad de Canal:}\par 
+\bigskip
+
+\noindent a) Enuncie el Teorema de Shannon-Hartley. \par
+\bigskip
+
+El Teorema de Shannon-Hartley establece que la capacidad máxima de un canal de comunicación libre de ruido está limitada por el ancho de banda y la potencia de la señal, en presencia de ruido aditivo blanco gaussiano. Matemáticamente, la capacidad C del canal se calcula como C = B * log2(1 + S/N), donde B es el ancho de banda del canal, S es la potencia de la señal, y N es la densidad espectral de potencia del ruido. Este teorema es fundamental en teoría de la información y comunicaciones, estableciendo un límite teórico sobre la cantidad de información que se puede transmitir a través de un canal de comunicación dado.
+\bigskip
+
+\noindent b) ¿Qué representa físicamente la capacidad de canal? .\par
+
+\bigskip
+La capacidad de canal representa la cantidad máxima de información que se puede transmitir de manera confiable a través de un canal de comunicación, considerando la limitación impuesta por el ancho de banda del canal y el nivel de ruido presente. 
+\bigskip
+
+\noindent c) Para un canal AWGN con ancho de banda \(B = 4\) kHz y \(SNR = 15\) dB, calcule la capacidad del canal. \par
+\bigskip
+
+Conversión de $SNR$ de dB a lineal:
+\begin{align*}
+SNR &= 10^{15/10} = 10^{1.5} = 31.62
+\end{align*}
+
+Cálculo de la capacidad:
+\begin{align*}
+C &= 4000 \cdot \log_2 (1 + 31.62) \\
+  &= 4000 \cdot \log_2 (32.62) \\
+  &= 4000 \cdot 5.03 \\
+  &= 20,120 \text{ bps}
+\end{align*}

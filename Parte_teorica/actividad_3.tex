@@ -1,23 +1,143 @@
 \subsection*{3. Series y Transformada de Fourier}
+\bigskip
 
-\textbf{3.1)} Enuncie las condiciones de Dirichlet para la existencia de la Serie de Fourier.
+\noindent \textbf{3.1)} Enuncie las condiciones de Dirichlet para la existencia de la Serie de Fourier.
 
-\textbf{3.2)} Para una señal periódica cuadrada de amplitud A y período T:
-\begin{enumerate}[label=\alph*)]
-    \item Calcule analíticamente los coeficientes de la Serie de Fourier
-    \item Escriba la expresión de la serie hasta el 5° armónico
-    \item Explique el fenómeno de Gibbs
-\end{enumerate}
+\noindent \begin{itemize}
+    \item $g(t)$ es de valor único, con un número finito de máximos y mínimos en cualquier intervalo finito de tiempo.
+    \item $g(t)$ tiene un número finito de discontinuidades en cualquier intervalo finito de tiempo.
+    \item $g(t)$ es absolutamente integrable: 
+    \[
+        \int_{-\infty}^{\infty} |g(t)| \, dt < \infty
+    \]
+\end{itemize}
+\bigskip
 
+\noindent \textbf{3.2)} Para una señal periódica cuadrada de amplitud A y período T:
+\bigskip
+
+   \noindent a) Calcule analíticamente los coeficientes de la Serie de Fourier
+            \[
+        a_k = \frac{1}{T} \int_{-T_1}^{T_1} A e^{-jk\omega_0 t}\,dt
+        \]
+        
+        \[
+        = \frac{A}{T} \left[ \frac{e^{-jk\omega_0 t}}{-jk\omega_0} \right]_{-T_1}^{T_1}
+        \]
+        
+        \[
+        = \frac{A}{T} \frac{e^{-jk\omega_0 T_1} - e^{jk\omega_0 T_1}}{-jk\omega_0}
+        \]
+        
+        \[
+        = \frac{A}{T}  \frac{-2j \sin(k\omega_0 T_1)}{-jk\omega_0}
+        \]
+        
+        \[
+        = \frac{A}{T}   \frac{2 \sin(k\omega_0 T_1)}{k\omega_0}
+        \]
+    
+    \bigskip
+   \noindent b) Escriba la expresión de la serie hasta el 5° armónico
+    \bigskip
+        \[
+        x(t) = \sum_{k=-5}^{5} a_k e^{j k \omega_0 t}, 
+        \qquad \omega_0 = \frac{2\pi}{T}
+        \]
+        
+        
+        \[
+        \begin{aligned}
+        x(t)  = & \; a_{-5} e^{-j5\omega_0 t} 
+        + a_{-4} e^{-j4\omega_0 t} 
+        + a_{-3} e^{-j3\omega_0 t} 
+        + a_{-2} e^{-j2\omega_0 t} 
+        + a_{-1} e^{-j\omega_0 t} + a_0 \\
+        & + a_{1} e^{j\omega_0 t} 
+        + a_{2} e^{j2\omega_0 t} 
+        + a_{3} e^{j3\omega_0 t} 
+        + a_{4} e^{j4\omega_0 t} 
+        + a_{5} e^{j5\omega_0 t}.
+        \end{aligned}
+        \]
+        \bigskip
+        
+   \noindent c) Explique el fenómeno de Gibbs
+   \bigskip
+   
+    El fénomeno de Gibbs aparece al aproximar una señal discontinua con una serie de Fourier truncada o al filtrarla con un ancho de banda limitado. Se manifiesta como un sobrepico (overshoot $\approx 9\%$) y oscilaciones cerca de los puntos de discontinuidad, que no desaparecen aunque se aumente el número de armónicos.
+
+
+    \bigskip
 \textbf{3.3)} Establezca la relación entre Series de Fourier y Transformada de Fourier. ¿Cuándo se utiliza cada una? ¿A que tipo de señales se aplican? ¿Cómo son estas señales desde el punto de vista de potencia y energía?
+\bigskip
 
-\textbf{3.4)} Enuncie y explique las siguientes propiedades de la Transformada de Fourier:
+Tanto la serie de fourier como la transformada de fourier se utilizan para representar señales discretas y continuas en el dominio de la frecuencia.
+Las series de fourier se utilizan para representar señales periódicas y la trasnformada de fourier para señales no periódicas. Las señales periódicas son de potencia y las señales no peródicas son de energía.
+
+\bigskip
+
+\noindent \textbf{3.4)} Enuncie y explique las siguientes propiedades de la Transformada de Fourier:
 \begin{itemize}
     \item Linealidad
+
+    La Transformada de Fourier es un operador lineal. Esto significa que la suma de dos señales en el dominio del tiempo es igual a la suma de las transformadas de Fourier de dichas señales en el dominio de la frecuencia.
+        \[
+       a\,x(t) + b\,y(t) \;\overset{\mathcal{F}}{\longleftrightarrow}\;  a\,X(f) + b\,Y(f), \qquad 
+       a,b\ constantes
+        \]
+        
     \item Desplazamiento temporal
+
+    Un retraso en el tiempo de la señal introduce un desfase lineal ($-2\pi f t_0$) en el dominio de la frecuencia.  
+    La magnitud del espectro no cambia, sólo la fase se ve afectada.
+        \[
+            x(t - t_0) \;\overset{\mathcal{F}}{\longleftrightarrow}\;e^{-j 2\pi f t_0}\, X(f)
+        \]
     \item Desplazamiento frecuencial
+    
+        Multiplicar una señal por una exponencial compleja lo que hace es desplazar el espectro en frecuencia.  
+        A esto se le denomina modulación.
+        \[
+        e^{j 2\pi f_0 t}\, x(t)\;\overset{\mathcal{F}}{\longleftrightarrow}\;
+       \;
+        X(f - f_0)
+        \]
+
+
+
     \item Escalado
+    
+        Comprimir una señal en el tiempo ($|a|>1$) expande su espectro en frecuencia, y viceversa.
+        \[
+        x(at)\;\overset{\mathcal{F}}{\longleftrightarrow}\;
+       \;\frac{1}{|a|}\,X\!\left(\frac{f}{a}\right)
+        \]
+
     \item Dualidad
+
+        La forma de una señal en el tiempo y su espectro son ``duales''.  
+        Si intercambiamos los roles de tiempo y frecuencia, la transformada de la transformada evaluada en $t$ da la señal original reflejada.
+        \[
+        X(t) = \mathcal{F}\{x(t)\} \;\;\Longrightarrow\;\; \mathcal{F}\{X(f)\} = x(-t)
+        \]
+
     \item Convolución
+
+     La convolución de dos señales en el dominio del tiempo corresponde a la multiplicación de sus transformadas de Fourier en el dominio de la frecuencia.
+ 
+        \[
+        x(t) * y(t)\;\overset{\mathcal{F}}{\longleftrightarrow}\;
+       \;  X(f)\,Y(f)
+        \]
+       
     \item Parseval
+
+        La energía total de una señal en el tiempo es igual a la energía total en el dominio de la frecuencia.
+
+        Si $X(f) = \mathcal{F}\{x(t)\}$, entonces
+        \[
+        \int_{-\infty}^{\infty} |x(t)|^2 \, dt \;=\; \int_{-\infty}^{\infty} |X(f)|^2 \, df
+        \]
+        
 \end{itemize}
